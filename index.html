@@ -1,88 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acesse o produto clicando abaixo</title>
-  <meta name="robots" content="noindex,nofollow" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Redirecionando…</title>
 
-  <!-- UTMify Collector (captura UTMs) -->
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    async
-    defer
-  ></script>
-  <!-- End UTMify Collector -->
-
-  <!-- UTMify Pixel (necessário para rastrear Purchase) -->
-  <script>
-    window.pixelId = "68ba7947ddb802bc4f2481ef"; // substitua pelo SEU ID da UTMify
-    var a = document.createElement("script");
-    a.setAttribute("async", "");
-    a.setAttribute("defer", "");
-    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-    document.head.appendChild(a);
-  </script>
-  <!-- End UTMify Pixel -->
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '652474300856231');
-  fbq('track', 'Purchase');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=652474300856231&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  <!-- fallback: meta refresh -->
+  <meta http-equiv="refresh" content="2;url=https://raquelpacks.online">
 
   <style>
-    body {
-      margin:0;
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      background:#fff;
-      font-family: Arial, sans-serif;
+    :root{
+      --bg:#070707;
+      --accent:#8e2de2;
+      --accent2:#4a00e0;
+      --text:#fff;
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 40px;
-      color:#111;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(135deg,var(--bg),#120014);
+      color:var(--text);
+      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:640px;
       text-align:center;
     }
-    a.btn {
-      display:inline-block;
-      padding:18px 40px;
-      font-size:20px;
-      font-weight:bold;
-      background:#111;
-      color:#fff;
-      border-radius:10px;
-      text-decoration:none;
-      transition: background .2s ease, transform .1s ease;
+
+    .card{
+      background:rgba(255,255,255,0.03);
+      padding:28px;
+      border-radius:14px;
+      box-shadow:0 12px 40px rgba(0,0,0,0.6);
+      border:1px solid rgba(255,255,255,0.02);
     }
-    a.btn:hover { background:#333; }
-    a.btn:active { transform:scale(.97); }
+
+    h1{
+      margin:0 0 8px;
+      font-size:20px;
+      font-weight:700;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    p{
+      margin:0 0 18px;
+      color:rgba(255,255,255,0.78);
+      font-size:14px;
+    }
+
+    .progress{
+      width:100%;
+      height:10px;
+      background:rgba(255,255,255,0.06);
+      border-radius:999px;
+      overflow:hidden;
+    }
+    .bar{
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      animation:fill 2s linear forwards;
+    }
+    @keyframes fill{ from{width:0} to{width:100%} }
+
+    .small{
+      margin-top:12px;
+      font-size:13px;
+      color:rgba(255,255,255,0.6);
+    }
+
+    a.fallback{
+      display:inline-block;
+      margin-top:10px;
+      color:var(--text);
+      text-decoration:underline;
+    }
   </style>
+
+  <script>
+    // redirect in 2000ms (2s). Uses replace so "back" doesn't go to this page.
+    setTimeout(function(){
+      try {
+        window.location.replace("https://raquelpacks.online");
+      } catch(e) {
+        window.location.href = "https://raquelpacks.online";
+      }
+    }, 2000);
+  </script>
 </head>
 <body>
-  <h1>Mundinho Secreto da Brenda</h1>
-  <a class="btn" href="https://t.me/+jCeBOmbT8-IxNjJh?start=utm_source=facebook&utm_medium=cpc&utm_campaign=teste1&utm_content=video1" target="_blank" rel="noopener">
-    CLIQUE AQUI
-  </a>
+  <div class="wrap">
+    <div class="card" role="status" aria-live="polite" aria-label="Redirecionando">
+      <h1>Redirecionando…</h1>
+      <p>Preparando seu acesso — você será levado em instantes.</p>
+
+      <div class="progress" aria-hidden="true">
+        <div class="bar"></div>
+      </div>
+
+      <div class="small">
+        Se não for redirecionado automaticamente, <a class="fallback" href="https://raquelpacks.online" target="_blank" rel="noopener">clique aqui</a>.
+      </div>
+    </div>
+  </div>
+
+  <!-- noscript fallback -->
+  <noscript>
+    <div style="text-align:center;padding:24px;color:#fff;background:#111;">
+      <p>JavaScript está desativado. <a href="https://raquelpacks.online" style="color:#8e2de2;text-decoration:underline">Clique aqui</a> para continuar.</p>
+    </div>
+  </noscript>
 </body>
 </html>
+
 
 
